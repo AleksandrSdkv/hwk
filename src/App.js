@@ -1,26 +1,13 @@
 import './App.css';
-import { Formik, Form, useField, Field } from 'formik';
-import { SchemaForSearch } from './validate/formValidate';
+import { Formik, Form, useField } from 'formik';
+import { SchemaForForm } from './validate/formValidate';
+import FormikRadioGroup from './components/FormikRadioGroup'
+import CheckBox from './components/CheckBox'
+import RememberMe from './components/RememberMe'
+import MySelect from './components/MySelect'
+
 function App() {
 
-  const CheckBox = ({ children, ...props }) => {
-    const [field] = useField({ ...props, type: 'checkbox' });
-    return (
-      <label className="searchform__toggle">
-        <input className="searchform__toggle-checkbox" type="checkbox"{...field} {...props} />
-        {children}
-      </label>
-    );
-  };
-  const RememberMe = ({ children, ...props }) => {
-    const [field] = useField({ ...props, type: 'checkbox' });
-    return (
-      <label className="searchform__toggle_remember">
-        <input className="searchform__toggle-checkbox" type="checkbox"{...field} {...props} />
-        {children}
-      </label>
-    );
-  };
   const FormName = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
@@ -32,8 +19,8 @@ function App() {
         ) : null}
       </>
     );
-
   };
+
   const FormPassword = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
@@ -46,8 +33,8 @@ function App() {
         ) : null}
       </>
     );
-
   };
+
   const FormText = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
@@ -59,42 +46,8 @@ function App() {
         ) : null}
       </>
     );
-
   };
-  const MySelect = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-      <div className='form_select-group'>
-        <label htmlFor={props.id || props.name}>{label}</label>
-        <select {...field} {...props} />
-        {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
-        ) : null}
-      </div>
-    );
-  };
-
-  const FormikRadioGroup = () => {
-    return (
-      <div role="group" className='form__radio-group' label="my-radio-group" >
-        <label className="form__radio-label">
-          <Field type="radio" name="picked" value="One" />
-          Radio selection 1
-        </label>
-        <label className="form__radio-label">
-          <Field type="radio" name="picked" value="Two" />
-          Radio selection 2
-        </label>
-        <label className="form__radio-label">
-          <Field type="radio" name="picked" value="Three" />
-          Radio selection 3
-        </label>
-      </div >
-    );
-  };
-
   return (
-
     <Formik
       initialValues={{
         username: '',
@@ -106,7 +59,7 @@ function App() {
         dropdownTitle: '',
       }}
 
-      validationSchema={SchemaForSearch}
+      validationSchema={SchemaForForm}
       onSubmit={(values) => {
         alert(JSON.stringify(values, null, 2));
       }
@@ -141,7 +94,6 @@ function App() {
               {...props.getFieldProps('inputText')}
             />
 
-
             <RememberMe name="remember"  >
               <div className="searchform__toggle-switch"></div>
               <span className="searchform__toggle-label">Remember me</span>
@@ -156,9 +108,9 @@ function App() {
             </FormikRadioGroup>
 
             <MySelect label="Dropdown Title" name="dropdownTitle">
-              <option value="">Dropdown option</option>
-              <option value="designer">Dropdown option 1</option>
-              <option value="development">Dropdown option 2</option>
+              <option value="Dropdown option">Dropdown option</option>
+              <option value="Dropdown option 1">Dropdown option 1</option>
+              <option value="Dropdown option 2">Dropdown option 2</option>
             </MySelect>
 
             <div className='form__button-group'>

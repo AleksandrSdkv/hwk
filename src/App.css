@@ -1,0 +1,125 @@
+.Form{
+  display: flex;
+    flex-direction: column;
+       margin: 0 auto;
+    padding: 96px 98px 92px;
+    box-sizing: border-box;
+    max-width: 760px;
+    align-items: flex-start;
+}
+.FormIdentify__label-text{
+  margin: 32px 0 8px 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: #666666;
+}
+.FormIdentify__label-text_name{
+  margin: 0 0 8px 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: #666666;
+
+}
+.FormIdentify__input{
+  width: 100%;
+  background: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 8px;
+padding: 16px;
+}
+.FormIdentify__input_last{
+  width: 100%;
+  background: #FFFFFF;
+border: 1px solid #CCCCCC;
+border-radius: 8px;
+padding: 16px;
+margin-bottom: 58px;
+}
+.FormIdentify__label-span{
+  font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+color: #666666;
+margin-top: 8px;
+}
+.searchform__toggle{
+  display: flex;
+  margin:0 0 32px 0;
+  gap: 16px;
+}
+.searchform__toggle_remember{
+  display: flex;
+  margin: 32px 0 32px 0;
+  gap: 16px;
+
+}
+.FormIdentify__input__error{
+  font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+color: #EB5757;
+}
+.form__button-group{
+  display: flex;
+  gap: 100px;
+  justify-content: space-between;
+  width: 100%;
+}
+.FormIdentify__button{
+  padding: 16px;
+width: 172px;
+height: 56px;
+background: #7A5CFA;
+border-radius: 8px;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #FFFFFF;
+border: none;
+}
+.FormIdentify__button_inactive{
+  padding: 16px;
+  width: 172px;
+  height: 56px;
+    border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  border: 1px solid #7A5CFA;
+}
+.form__button_clear{
+  padding: 16px;
+  width: 172px;
+  height: 56px;
+    border-radius: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #7A5CFA;
+  border: 1px solid #7A5CFA;
+}
+.form__radio-group{
+display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.form_select-group{
+  display: flex;
+  margin: 32px 0 32px 0;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__radio-label{
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+color: #666666;
+}
